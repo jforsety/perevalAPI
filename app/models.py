@@ -10,9 +10,9 @@ class MyUser(models.Model):
 
 
 class Coords(models.Model):
-    latitude = models.CharField(max_length=10, verbose_name='Широта')
-    longitude = models.CharField(max_length=10, verbose_name='Долгота')
-    height = models.CharField(max_length=10, verbose_name='Высота')
+    latitude = models.CharField(max_length=10, verbose_name='Широта', null=True)
+    longitude = models.CharField(max_length=10, verbose_name='Долгота', null=True)
+    height = models.CharField(max_length=10, verbose_name='Высота', null=True)
 
 
 class Level(models.Model):
@@ -39,10 +39,10 @@ class Pereval(models.Model):
         ('acp', 'Принято'),
         ('rej', 'Отклонено'),
     ]
-    beauty_title = models.CharField(max_length=100, unique=True)
-    title = models.CharField(max_length=50, unique=True)
-    other_titles = models.CharField(max_length=50, unique=True)
-    connect = models.CharField(max_length=50, unique=True)
+    beauty_title = models.CharField(max_length=100, blank=True)
+    title = models.CharField(max_length=50, blank=True)
+    other_titles = models.CharField(max_length=50, blank=True)
+    connect = models.CharField(max_length=50, blank=True)
     add_time = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     coords = models.ForeignKey(Coords, on_delete=models.CASCADE)
@@ -51,9 +51,12 @@ class Pereval(models.Model):
 
 
 class Images(models.Model):
-    data = models.URLField(max_length=200, verbose_name='Ссылка на изображение')
-    title = models.CharField(max_length=50, unique=True, verbose_name='Описание изображения')
+    data = models.CharField(max_length=2000, verbose_name='Cсылка на изображение')
+    title = models.CharField(max_length=50, verbose_name='Описание изображения')
     pereval = models.ForeignKey(Pereval, on_delete=models.CASCADE, verbose_name='Изображения', related_name='images')
+
+    def __str__(self):
+        return self.data, self.title
 
 
 

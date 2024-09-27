@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app import views
+from .yasg import urlpatterns as doc_url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('submitdata/', views.PerevalViewSet.as_view({'post': 'create', 'get': 'list'}), name='pereval-list'),
 ]
+
+urlpatterns += doc_url
