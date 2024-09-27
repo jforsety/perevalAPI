@@ -2,7 +2,7 @@ from django.db import models
 
 
 class MyUser(models.Model):
-    email = models.EmailField(max_length=50, )
+    email = models.EmailField(max_length=50)
     fam = models.CharField(max_length=50, verbose_name='Фамилия')
     name = models.CharField(max_length=50, verbose_name='Имя')
     otc = models.CharField(max_length=50, verbose_name='Отчество')
