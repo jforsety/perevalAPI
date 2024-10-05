@@ -22,6 +22,8 @@ from .yasg import urlpatterns as doc_url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('submitdata/', views.PerevalViewSet.as_view({'post': 'create', 'get': 'list'}), name='pereval-list'),
+    path('submitdata/<int:pk>/', views.PerevalViewSet.as_view({'get': 'retrieve', 'patch': 'partial_update'}),
+         name='pereval-detail'),
 ]
 
 urlpatterns += doc_url

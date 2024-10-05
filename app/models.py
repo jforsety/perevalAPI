@@ -49,6 +49,9 @@ class Pereval(models.Model):
     level = models.ForeignKey(Level, on_delete=models.CASCADE)
     status = models.CharField(max_length=3, choices=STATUSES, default='new')
 
+    def __str__(self):
+        return f'{self.id} : {self.title}'
+
 
 class Images(models.Model):
     data = models.CharField(max_length=2000, verbose_name='Cсылка на изображение')
