@@ -103,8 +103,8 @@ Pereval Rest API
 Документация swagger:<u>https://127.0.0.1:8000/swagger</u><br>
 Документация redoc: <u>http://127.0.0.1:8000/redoc/</u>
 ***
-#### Покрытие тестами
-Пока в работе.
+#### Отчет о покрытии тестами
+![](https://github.com/jforsety/perevalAPI/coverage.png?raw=true)
 
 
 
