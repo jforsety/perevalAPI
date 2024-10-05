@@ -104,7 +104,7 @@ Pereval Rest API
 Документация redoc: <u>http://127.0.0.1:8000/redoc/</u>
 ***
 #### Отчет о покрытии тестами
-![](https://github.com/jforsety/perevalAPI/coverage.png?raw=true)
+![](https://github.com/jforsety/perevalAPI/blob/submitData/coverage.png?raw=true)
 
 
 
