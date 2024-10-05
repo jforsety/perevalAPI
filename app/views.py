@@ -2,8 +2,8 @@ from rest_framework.response import Response
 from rest_framework import viewsets
 from django.http import Http404
 
-
-from .serializers import *
+from app.models import MyUser, Coords, Level, Images, Pereval
+from app.serializers import MyUserSerializer, CoordsSerializer, LevelSerializer, ImagesSerializer, PerevalSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
