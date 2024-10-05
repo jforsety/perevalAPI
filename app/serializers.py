@@ -50,9 +50,7 @@ class PerevalSerializer(WritableNestedModelSerializer):
                 instance_user.otc != data_user['otc'],
                 instance_user.phone != data_user['phone'],
                 instance_user.email != data_user['email'],
-
             ]
-
             if data_user is not None and any(validating_user_fields):
                 raise serializers.ValidationError({'Отклонено': 'Нельзя изменять данные пользователя'})
         return data
