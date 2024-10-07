@@ -31,7 +31,7 @@ Pereval Rest API
 [![My Skills](https://skillicons.dev/icons?i=py,django,postgres)](https://skillicons.dev)
 * Проект написан с использованием языка программирования Python.
 * Был задействован фреймворк Django.
-* В качестве БД был выбран PostgeSQL
+* В качестве БД был выбран PostgreSQL
 ***
 #### Описание методов
 <b>GET /submitdata/</b>\
